@@ -1,19 +1,20 @@
-function addBookSection()
-{
+import { addBook } from "./book.js";
+
+function addBookSection() {
     const bSection = document.createElement("div");
-     bSection.innerHTML = `  
+    bSection.innerHTML = `  
         <div id="sAddBook">
             <button id="addBook" class="btn">Ajouter un livre</button>
         </div>`;
-        const newBook = document.querySelector(".newBook"); 
-        newBook.after(bSection);
- 
+    const newBook = document.querySelector(".newBook");
+    newBook.after(bSection);
+    addBook();
+
 
 }
-function addSearchSection()
-{
-    const cancel = addCancelButton();
-    const sSection = `<div id="sSearch">
+function addSearchSection() {
+    const sSection = document.createElement("div");
+    sSection.innerHTML = `<div id="sSearch">
         <form id="form">
         <label>Titre du livre</label><br>
         <input type="text" name="title" id="title" class="input" required><br>
@@ -22,11 +23,10 @@ function addSearchSection()
         <button class="btn">Rechercher</button>
         </form>       
         </div>`;
- 
-        const newSeach = document.querySelector(".newBook"); 
-        newSeach.after(sSection);
+    const newSeach = document.querySelector(".newBook");
+    newSeach.after(sSection);
 
 }
 
 
-export {addBookSection};
+export { addBookSection, addSearchSection };
