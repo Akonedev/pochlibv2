@@ -1,0 +1,33 @@
+{
+  "name": "pochlibv2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akonedev/pochlibv2.git"
+  },
+  "keywords": [
+    "pochLib",
+    "-",
+    "Application",
+    "de",
+    "gestion",
+    "de",
+    "livres",
+    "commandée"
+  ],
+  "author": "akone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akonedev/pochlibv2/issues"
+  },
+  "homepage": "https://github.com/Akonedev/pochlibv2#readme",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
