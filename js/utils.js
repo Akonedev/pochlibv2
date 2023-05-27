@@ -9,8 +9,6 @@ function addBookSection() {
      bSection.innerHTML = `<button id="addBook" class="btn">Ajouter un livre</button>`;
     newBook.after(bSection);
     addBook();
-
-
 }
 
 function addCancelButton()
@@ -24,7 +22,7 @@ function addSearchSection() {
      const sSection = document.createElement("div");
      sSection.className = 'sSearch';
      sSection.id = "sSearch";
-    newSeach.innerHTML = `
+     sSection.innerHTML = `
         <form id="form">
         <label>Titre du livre</label><br>
         <input type="text" name="title" id="title" class="input" required><br>
@@ -36,8 +34,17 @@ function addSearchSection() {
        `;
        document.getElementById('addBook').remove();
         newSeach.after(sSection);
+        cancelSearchSection();
 
 }
 
+function cancelSearchSection()
+{
+        document.getElementById('cancel').addEventListener('click', function () {
+        document.getElementById('sSearch').remove();
+        addBookSection();
+      })
+
+}
 
 export { addBookSection, addSearchSection };
