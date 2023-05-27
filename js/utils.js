@@ -1,4 +1,5 @@
 import { addBook } from "./book.js";
+import {search} from "./search.js";
 
 const newBook = document.querySelector(".newBook");
 const newSeach = document.querySelector(".newBook");
@@ -35,7 +36,7 @@ function addSearchSection() {
        document.getElementById('addBook').remove();
         newSeach.after(sSection);
         cancelSearchSection();
-
+        search();
 }
 
 function cancelSearchSection()
