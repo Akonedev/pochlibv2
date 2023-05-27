@@ -1,8 +1,7 @@
 import { showResults } from "./results.js";
 
-function search()
-{
-    const form  = document.getElementById('form');
+function search() {
+    const form = document.getElementById('form');
     form.addEventListener('submit', (event) => {
         // stop form submission
         event.preventDefault();
@@ -13,11 +12,11 @@ function search()
         url = url + title + author;
 
         const res = fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-            showResults(data);
-        })
+            .then((res) => res.json())
+            .then((data) => {
+                showResults(data);
+            })
     });
 }
 
-export {search};
+export { search };
