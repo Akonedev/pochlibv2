@@ -41,7 +41,8 @@ function addSearchSection() {
 function cancelSearchSection() {
     document.getElementById("cancel").addEventListener("click", function () {
         document.getElementById("sSearch").remove();
-        addBookSection();
+        // addBookSection();
+        window.location.reload(true)
     });
 }
 
