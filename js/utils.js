@@ -49,11 +49,16 @@ function cancelSearchSection() {
 }
 
  function cancelSection(sMode) {
-    // alert ("mode = " + sMode)
+
         // if (sMode == "results"){
             document.getElementById("cancel").addEventListener("click", function () {
                 //  document.getElementById("addBook").remove();
                 document.getElementById(sMode).remove();
+                // if (sMode =="error"){
+
+                //     document.getElementById("titleResultWrapper").remove();
+                // }
+                // 
                 // document.getElementById("results").remove();
                 
             });

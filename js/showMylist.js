@@ -52,8 +52,7 @@ function showMyList(book, showmode) {
   }
 
   if (showmode == "apiList") {
-    //contentSection = document.getElementById("resultsBooks");
-    contentSection = document.getElementById("titleResultWrapper");
+    contentSection = document.getElementById("resultsBooks");
     BookmarkButton = addBookmarkButton;
   } else {
     contentSection = document.getElementById("content");
@@ -69,15 +68,17 @@ function showMyList(book, showmode) {
   card.appendChild(authorBookCard);
   card.appendChild(descriptionBookCard);
   card.appendChild(imgCard);
-
+  
   // pochList.appendChild(card);
   contentSection.appendChild(card);
 
   addBookmarkButton.onclick = function () {
     addBookInMyList(book);
+    window.location.reload(true)
   }
   removeBookmarkButton.onclick = function () {
     removeBookFromMyList(book);
+    window.location.reload(true)
   }
 
 }

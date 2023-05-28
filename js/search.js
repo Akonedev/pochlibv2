@@ -5,10 +5,13 @@ function search() {
     form.addEventListener("submit", (event) => {
         // stop form submission
         event.preventDefault();
-
-        var url = "https://www.googleapis.com/books/v1/volumes?q=";
-        var title = document.getElementById("title").value;
-        var author = document.getElementById("author").value;
+        
+        let url = "";
+        let title = "";
+        let author = "";
+            url = "https://www.googleapis.com/books/v1/volumes?q=";
+            title = document.getElementById("title").value;
+            author = document.getElementById("author").value;
         url = url + title + author;
 
         const res = fetch(url)
