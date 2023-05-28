@@ -42,8 +42,14 @@ function cancelSearchSection() {
     document.getElementById('cancel').addEventListener('click', function () {
         document.getElementById('sSearch').remove();
         addBookSection();
+    });
+}
+
+function cancelResultSection() {
+    document.getElementById('cancel').addEventListener('click', function () {
+        document.getElementById('results').remove();
     })
 
 }
 
-export { addBookSection, addSearchSection };
+export { addBookSection, addSearchSection, cancelResultSection };
