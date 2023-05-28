@@ -2,7 +2,7 @@ import { getDescription, getImage, addBookInMyList } from "./book.js";
 import { cancelSection } from "./utils.js"
 import { showMyList } from "./showResult.js"
 
-function showResults(data) {
+function getApiResults(data) {
     if (data.totalItems > 0) {
         if (!document.getElementById("results")) {
             const hrSeparator = document.getElementById("separator");
@@ -40,4 +40,4 @@ function showResults(data) {
     }
 }
 
-export { showResults };
+export { getApiResults };

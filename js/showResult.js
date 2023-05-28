@@ -94,12 +94,14 @@ function showMyResult(book, showmode) {
   card.appendChild(cardTBottom);
   contentSection.appendChild(card);
 
-  addBookmarkButton.onclick = function () {
+  addBookmarkButton.addEventListener("click", function () {
     addBookInMyList(book);
-  }
-  removeBookmarkButton.onclick = function () {
+  })
+
+  removeBookmarkButton.addEventListener("click", function () {
     removeBookFromMyList(book);
-  }
+  })
+
 
 }
 export { showMyResult as showMyList };

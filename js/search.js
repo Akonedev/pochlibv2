@@ -1,4 +1,4 @@
-import { showResults } from "./getApiResults.js";
+import { getApiResults } from "./getApiResults.js";
 
 function search() {
     const form = document.getElementById("form");
@@ -17,7 +17,7 @@ function search() {
         const res = fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                showResults(data);
+                getApiResults(data);
             })
     });
 }
