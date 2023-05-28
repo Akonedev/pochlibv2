@@ -1,4 +1,4 @@
-import { showResults } from "./results.js";
+import { showResults } from "./showApiResults.js";
 
 function search() {
     const form = document.getElementById("form");

@@ -1,4 +1,5 @@
-function createModal(container, newQuery, message) {
+// function createModal(container, message) {
+export default function createModal(container, message) {
   let addModal = document.createElement("div");
   addModal.className = "divParentModal";
   addModal.id = "divParentModal";
@@ -26,13 +27,14 @@ function createModal(container, newQuery, message) {
 
   window.onclick = function (event) {
     if (event.target == modal) {
+      message = "";
       modal.style.display = "none";
     }
   }
 
-  var parentModal = document.getElementById("divParentModal");
-  // parentModal.classList.add('modal_alert');
-  parentModal.style.setProperty('background-color', 'blue');
+  // var parentModal = document.getElementById("divParentModal");
+  // // parentModal.classList.add('modal_alert');
+  // parentModal.style.setProperty('background-color', 'blue');
 }
 
-export { createModal };
+// export { createModal };

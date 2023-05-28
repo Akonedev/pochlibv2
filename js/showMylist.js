@@ -3,7 +3,6 @@ import { getDescription, getImage, addBookInMyList, removeBookFromMyList } from 
 function showMyList(book, showmode) {
   let contentSection = "";
 
-
   const content = document.getElementById("content");
   const myBookList = document.createElement("myBookList");
   myBookList.setAttribute("id", "myBookList");
@@ -93,8 +92,6 @@ function showMyList(book, showmode) {
 
   card.appendChild(cardTop);
   card.appendChild(cardTBottom);
-
-  // pochList.appendChild(card);
   contentSection.appendChild(card);
 
   addBookmarkButton.onclick = function () {
