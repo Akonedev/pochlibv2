@@ -3,6 +3,7 @@ import { search } from "./search.js";
 
 const newBook = document.querySelector(".newBook");
 const newSeach = document.querySelector(".newBook");
+// const hrSeparator = document.querySelector("hr");
 
 function addBookSection() {
     const bSection = document.createElement("div");
@@ -20,7 +21,7 @@ function addCancelButton() {
 function addSearchSection() {
     const cancel = addCancelButton();
     const sSection = document.createElement("div");
-    sSection.className = 'sSearch';
+    sSection.className = "sSearch";
     sSection.id = "sSearch";
     sSection.innerHTML = `
         <form id="form">
@@ -30,31 +31,49 @@ function addSearchSection() {
         <input type="text" name="author" id="author" class="author" required><br>
         <button class="btn">Rechercher</button>
         </form> 
+
         ${cancel}      
        `;
-    document.getElementById('addBook').remove();
+    document.getElementById("addBook").remove();
     newSeach.after(sSection);
     cancelSearchSection();
     search();
 }
 
 function cancelSearchSection() {
-    document.getElementById('cancel').addEventListener('click', function () {
-        document.getElementById('sSearch').remove();
+    document.getElementById("cancel").addEventListener("click", function () {
+        document.getElementById("sSearch").remove();
+        // document.getElementById("results").remove();
         addBookSection();
     });
 }
 
-function cancelResultSection() {
-    document.getElementById('cancel').addEventListener('click', function () {
-        document.getElementById('results').remove();
-    })
-}
-function cancelErrorSection() {
-    document.getElementById('cancel').addEventListener('click', function () {
-        document.getElementById('results').remove();
-    })
-    
-}
+ function cancelSection(sMode) {
+    // alert ("mode = " + sMode)
+        // if (sMode == "results"){
+            document.getElementById("cancel").addEventListener("click", function () {
+                //  document.getElementById("addBook").remove();
+                document.getElementById(sMode).remove();
+                // document.getElementById("results").remove();
+                
+            });
+        // }else if (sMode =="error"){
+            // document.getElementById("cancel").addEventListener("click", function () {
+            //                 document.getElementById(results).remove();
+        //     })
+        // };
+    }
 
-export { addBookSection, addSearchSection, cancelSearchSection, cancelResultSection, cancelErrorSection };
+// function cancelResultSection() {
+//     document.getElementById("cancel").addEventListener("click", function () {
+//         document.getElementById("results").remove();
+//     })
+// }
+//     function cancelErrorSection() {
+//         document.getElementById("cancel").addEventListener("click", function () {
+//             document.getElementById("results").remove();
+//         })
+    
+// }
+
+export { addBookSection, addSearchSection, cancelSearchSection, cancelSection };

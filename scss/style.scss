@@ -7,3 +7,74 @@ body {
 #logo {
     width: 100px;
 }
+
+
+/*données du livre */
+.card {
+    width: 40vw;
+    background-color: #d1cece;
+    margin-bottom: 2vh;
+    border: 2px solid black;
+    padding: 1em;
+    margin-right: 2em;
+  }
+  
+  /* données du livre
+  .card {
+    width: 40vw;
+    background-color: #d1cece;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    margin-right: 10px;
+  } */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+  }
+  
+  /* titre du livre */
+  .card-container .card-title {
+    display: block;
+    margin-block-start: 3em;
+    margin-block-end: 1.33em;
+    font-weight: bold;
+  
+  }
+  
+  /* Id du livre */
+  .card-container .card-id {
+    display: flex;
+  }
+  
+  /* auteur du livre */
+  .card-container .card-author {
+    display: flex;
+    margin: auto;
+  }
+  
+  /* descritpion du livre */
+  .card-container .card-description {
+    display: flex;
+  }
+  .card-container .card-img {
+    display: block;
+    margin: auto;
+    height: auto;
+    max-width: 30%;
+    
+  }
+  
+  .removeButton{
+    float: right;
+    color:#cd1d1d ;
+    
+    }
+  
+    .addBookmarkButton{
+      color: #2b6902;
+      float: right;
+    }
+  

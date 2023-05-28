@@ -1,15 +1,23 @@
 import { getDescription, getImage, addBookInMyList } from "./book.js";
-import { cancelResultSection, cancelSearchSection, cancelErrorSection } from "./utils.js"
+import { cancelSection } from "./utils.js"
 import { showMyList } from "./showMylist.js"
 
 function showResults(data) {
 
-    const hrSeparator = document.querySelector('hr');
+    const hrSeparator = document.querySelector("hr");
     if (!document.getElementById("results")) {
-        const resultWrapper = document.createElement('div');
+        const resultWrapper = document.createElement("div");
+        const resultBooksWp = document.createElement("div");
+        const titleResultWrapper = document.createElement("h2");
         resultWrapper.setAttribute("id", "results");
-        resultWrapper.innerHTML = `<h2>Résultats de recherche</h2><div id="resultsBooks"></div>`;
+        titleResultWrapper.setAttribute("id", "titleResultWrapper");
+        // resultBooksWp.setAttribute("id", "resultsBooks"); 
+        
+        titleResultWrapper.innerHTML = `Résultats de recherche`;
+        // titleResultWrapper.appendChild(resultBooksWp)
+        resultWrapper.appendChild(titleResultWrapper)
         hrSeparator.after(resultWrapper);
+
     }
 
     if (data.totalItems > 0) {
@@ -19,17 +27,16 @@ function showResults(data) {
             const apimode = "apiList";
             showMyList(el, apimode);
         });
-        cancelResultSection();
+        cancelSection("results");
     }
     else {
-        const errorSection = document.createElement('div');
-        errorSection.id = 'results';
-        errorSection.className = 'results';
+        const errorSection = document.createElement("div");
+        errorSection.id = "error";
+        errorSection.className = "error";
         errorSection.innerHTML = `<p class="center">Aucun livre trouvé</p>`
-        document.getElementById("resultsBooks").appendChild(errorSection);
-        cancelErrorSection();
-    }
-    
+        document.getElementById("results").appendChild(errorSection);
+        cancelSection("error");
+    }    
 }
 
 export { showResults };
