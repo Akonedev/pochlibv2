@@ -3,25 +3,20 @@ import { cancelSection } from "./utils.js"
 import { showMyList } from "./showMylist.js"
 
 function showResults(data) {
-
-   
-   
-
     if (data.totalItems > 0) {
         if (!document.getElementById("results")) {
-            const hrSeparator = document.querySelector("hr");
+            const hrSeparator = document.getElementById("separator");
             const resultWrapper = document.createElement("div");
             const resultBooksWp = document.createElement("div");
             const titleResultWrapper = document.createElement("h2");
             resultWrapper.setAttribute("id", "results");
             titleResultWrapper.setAttribute("id", "titleResultWrapper");
-            resultBooksWp.setAttribute("id", "resultsBooks"); 
-            
+            resultBooksWp.setAttribute("id", "resultsBooks");
             titleResultWrapper.innerHTML = `Résultats de recherche`;
-            titleResultWrapper.appendChild(resultBooksWp)
             resultWrapper.appendChild(titleResultWrapper)
+            resultWrapper.appendChild(resultBooksWp)
             hrSeparator.after(resultWrapper);
-    
+
         }
         const search = data.items;
 
@@ -38,7 +33,7 @@ function showResults(data) {
         errorSection.innerHTML = `<p class="center">Aucun livre trouvé</p>`
         document.getElementById("content").before(errorSection);
         cancelSection("error");
-    }    
+    }
 }
 
 export { showResults };

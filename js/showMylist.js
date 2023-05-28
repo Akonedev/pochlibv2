@@ -7,29 +7,46 @@ function showMyList(book, showmode) {
   card.id = "poch-" + book.id;
   card.className = "card";
 
-  const idBookCard = document.createElement("h4");
-  idBookCard.innerText = "Id : " + book.id;
-  idBookCard.className = "card-id";
 
-  const titleBookCard = document.createElement("h4");
-  titleBookCard.innerText = "Titre : " + book.volumeInfo.title;
-  titleBookCard.className = "card-title";
+  const cardTop = document.createElement("div");
+  cardTop.className = "card-header";
 
-  const authorBookCard = document.createElement("p");
-  authorBookCard.innerText = "Auteur : " + book.volumeInfo.authors;
-  authorBookCard.className = "card-author";
+  const cardTopLeft = document.createElement("div");
+  cardTopLeft.className = "card-top-left";
+
+  const cardTopRight = document.createElement("div");
+  cardTopRight.className = "card-top-right";
+
+  const cardTBottom = document.createElement("div");
+  cardTBottom.className = "card-title book-bottom";
+
+  const bookId = document.createElement("h4");
+  bookId.innerText = "Id : " + book.id;
+  bookId.className = "card-id";
+
+  const bookTitle = document.createElement("h4");
+  bookTitle.innerText = "Titre : " + book.volumeInfo.title;
+  bookTitle.className = "card-title";
+
+  const bookAuthor = document.createElement("p");
+  bookAuthor.innerText = "Auteur : " + book.volumeInfo.authors;
+  bookAuthor.className = "card-author";
   if (book.volumeInfo.authors > 1) {
     book.volumeInfo.authors = book.volumeInfo.authors.slice(0, 2);
   }
 
-  const descriptionBookCard = document.createElement("p");
-  descriptionBookCard.innerText = "Description : " + book.volumeInfo.description;
-  descriptionBookCard.className = "card-description";
+  const bookDescription = document.createElement("div");
+  bookDescription.setAttribute("class", "bookDescription card-description");
 
-  if (descriptionBookCard === "" || descriptionBookCard === "undefined") {
-    descriptionBookCard.innerText = "Information manquante";
-  } else if (descriptionBookCard.innerText.length > 200) {
-    descriptionBookCard.innerText = descriptionBookCard.innerText.substring(0, 200) + '...';
+  const bookDescriptionPar = document.createElement("p");
+  bookDescriptionPar.setAttribute("class", "bookDescriptionPar");
+
+  bookDescriptionPar.innerText = "Description : " + book.volumeInfo.description;
+
+  if (bookDescriptionPar === "" || bookDescriptionPar === "undefined") {
+    bookDescriptionPar.innerText = "Information manquante";
+  } else if (bookDescriptionPar.innerText.length > 200) {
+    bookDescriptionPar.innerText = bookDescriptionPar.innerText.substring(0, 200) + '...';
   }
 
   // const addBookmarkButton = document.createElement("div");
@@ -42,13 +59,13 @@ function showMyList(book, showmode) {
   removeBookmarkButton.setAttribute("class", "fa fa-trash");
   removeBookmarkButton.setAttribute("id", "removeBookmarkButton");
 
-  const imgCard = document.createElement("img");
-  imgCard.className = "card-img";
+  const bookImg = document.createElement("img");
+  bookImg.className = "card-img book-bottom";
 
   if (book.volumeInfo.imageLinks === null || book.volumeInfo.imageLinks === undefined) {
-    imgCard.src = "img/unavailable.png";
+    bookImg.src = "img/unavailable.png";
   } else {
-    imgCard.src = book.volumeInfo.imageLinks.thumbnail;
+    bookImg.src = book.volumeInfo.imageLinks.thumbnail;
   }
 
   if (showmode == "apiList") {
@@ -59,26 +76,29 @@ function showMyList(book, showmode) {
     BookmarkButton = removeBookmarkButton;
   }
 
-  const headerCard = document.createElement("div");
-  headerCard.className = "card-header";
-  headerCard.appendChild(idBookCard);
-  headerCard.appendChild(titleBookCard);
-  headerCard.appendChild(BookmarkButton);
-  card.appendChild(headerCard);
-  card.appendChild(authorBookCard);
-  card.appendChild(descriptionBookCard);
-  card.appendChild(imgCard);
-  
+  cardTopLeft.appendChild(bookId);
+  cardTopLeft.appendChild(bookTitle);
+  cardTopRight.appendChild(BookmarkButton);
+  cardTop.appendChild(cardTopLeft);
+  cardTop.appendChild(cardTopRight);
+  cardTBottom.appendChild(bookImg);
+
+  bookDescription.appendChild(bookDescriptionPar);
+  cardTBottom.appendChild(bookDescription);
+
+  card.appendChild(cardTop);
+  card.appendChild(cardTBottom);
+
   // pochList.appendChild(card);
   contentSection.appendChild(card);
 
   addBookmarkButton.onclick = function () {
     addBookInMyList(book);
-    window.location.reload(true)
+    // window.location.reload(false)
   }
   removeBookmarkButton.onclick = function () {
     removeBookFromMyList(book);
-    window.location.reload(true)
+    // window.location.reload(true)
   }
 
 }

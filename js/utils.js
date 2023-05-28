@@ -1,9 +1,7 @@
 import { addBook } from "./book.js";
 import { search } from "./search.js";
 
-const newBook = document.querySelector(".newBook");
-const newSeach = document.querySelector(".newBook");
-// const hrSeparator = document.querySelector("hr");
+const newBook = document.getElementById("newBook");
 
 function addBookSection() {
     const bSection = document.createElement("div");
@@ -32,10 +30,10 @@ function addSearchSection() {
         <button class="btn">Rechercher</button>
         </form> 
 
-        ${cancel}      
+        ${cancel}
        `;
     document.getElementById("addBook").remove();
-    newSeach.after(sSection);
+    newBook.after(sSection);
     cancelSearchSection();
     search();
 }
@@ -43,42 +41,13 @@ function addSearchSection() {
 function cancelSearchSection() {
     document.getElementById("cancel").addEventListener("click", function () {
         document.getElementById("sSearch").remove();
-        // document.getElementById("results").remove();
         addBookSection();
     });
 }
 
  function cancelSection(sMode) {
-
-        // if (sMode == "results"){
-            document.getElementById("cancel").addEventListener("click", function () {
-                //  document.getElementById("addBook").remove();
-                document.getElementById(sMode).remove();
-                // if (sMode =="error"){
-
-                //     document.getElementById("titleResultWrapper").remove();
-                // }
-                // 
-                // document.getElementById("results").remove();
-                
-            });
-        // }else if (sMode =="error"){
-            // document.getElementById("cancel").addEventListener("click", function () {
-            //                 document.getElementById(results).remove();
-        //     })
-        // };
+        document.getElementById("cancel").addEventListener("click", function () {
+        document.getElementById(sMode).remove();
+        });
     }
-
-// function cancelResultSection() {
-//     document.getElementById("cancel").addEventListener("click", function () {
-//         document.getElementById("results").remove();
-//     })
-// }
-//     function cancelErrorSection() {
-//         document.getElementById("cancel").addEventListener("click", function () {
-//             document.getElementById("results").remove();
-//         })
-    
-// }
-
 export { addBookSection, addSearchSection, cancelSearchSection, cancelSection };

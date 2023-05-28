@@ -27,7 +27,7 @@ function addBookInMyList(book) {
     const books = JSON.parse(sessionStorage.getItem("myPochList"));
     const found = books.find(e => e.id == book.id);
     if (found) {
-        alert("ce livre ${book.volumeInfo.title} existe déjà dans votre pochlist");
+        alert(`Le livre ${book.volumeInfo.title} existe déjà dans votre pochlist`);
         return;
     } else {
         books.push(book);
