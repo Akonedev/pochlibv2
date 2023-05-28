@@ -49,7 +49,12 @@ function cancelResultSection() {
     document.getElementById('cancel').addEventListener('click', function () {
         document.getElementById('results').remove();
     })
-
+}
+function cancelErrorSection() {
+    document.getElementById('cancel').addEventListener('click', function () {
+        document.getElementById('results').remove();
+    })
+    
 }
 
-export { addBookSection, addSearchSection, cancelResultSection };
+export { addBookSection, addSearchSection, cancelSearchSection, cancelResultSection, cancelErrorSection };

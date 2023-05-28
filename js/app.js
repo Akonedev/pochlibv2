@@ -3,7 +3,6 @@ import { showMyList } from "./showMylist.js"
 
 function main() {
   init();
-  addBookSection();
 }
 
 function init() {
@@ -17,5 +16,6 @@ function init() {
     }
     );
   }
+  addBookSection();
 }
 main();

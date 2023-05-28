@@ -1,5 +1,5 @@
 import { getDescription, getImage, addBookInMyList } from "./book.js";
-import { cancelResultSection } from "./utils.js"
+import { cancelResultSection, cancelSearchSection, cancelErrorSection } from "./utils.js"
 import { showMyList } from "./showMylist.js"
 
 function showResults(data) {
@@ -19,11 +19,17 @@ function showResults(data) {
             const apimode = "apiList";
             showMyList(el, apimode);
         });
+        cancelResultSection();
     }
     else {
-        document.getElementById("resultsBooks").append('<p class="center">Aucun livre trouvé</p>');
+        const errorSection = document.createElement('div');
+        errorSection.id = 'results';
+        errorSection.className = 'results';
+        errorSection.innerHTML = `<p class="center">Aucun livre trouvé</p>`
+        document.getElementById("resultsBooks").appendChild(errorSection);
+        cancelErrorSection();
     }
-    cancelResultSection();
+    
 }
 
 export { showResults };

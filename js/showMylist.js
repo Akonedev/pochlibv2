@@ -3,9 +3,6 @@ import { getDescription, getImage, addBookInMyList, removeBookFromMyList } from 
 function showMyList(book, showmode) {
   let contentSection = "";
 
-  // const contentSection = document.getElementById("content");
-  // const pochList = document.getElementById('livre-container');
-
   const card = document.createElement('div');
   card.id = 'poch-' + book.id;
   card.className = 'card';
