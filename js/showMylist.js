@@ -3,10 +3,16 @@ import { getDescription, getImage, addBookInMyList, removeBookFromMyList } from 
 function showMyList(book, showmode) {
   let contentSection = "";
 
+
+  const content = document.getElementById("content");
+  const myBookList = document.createElement("myBookList");
+  myBookList.setAttribute("id", "myBookList");
+
+  content.appendChild(myBookList);
+
   const card = document.createElement("div");
   card.id = "poch-" + book.id;
-  card.className = "card";
-
+  card.className = "card book";
 
   const cardTop = document.createElement("div");
   cardTop.className = "card-header";
@@ -49,7 +55,6 @@ function showMyList(book, showmode) {
     bookDescriptionPar.innerText = bookDescriptionPar.innerText.substring(0, 200) + '...';
   }
 
-  // const addBookmarkButton = document.createElement("div");
   let BookmarkButton;
   const addBookmarkButton = document.createElement("i");
   addBookmarkButton.setAttribute("class", "fa fa-bookmark");
@@ -69,10 +74,10 @@ function showMyList(book, showmode) {
   }
 
   if (showmode == "apiList") {
-    contentSection = document.getElementById("resultsBooks");
+    contentSection = document.getElementById("results-books");
     BookmarkButton = addBookmarkButton;
   } else {
-    contentSection = document.getElementById("content");
+    contentSection = document.getElementById("myBookList");
     BookmarkButton = removeBookmarkButton;
   }
 
@@ -94,11 +99,9 @@ function showMyList(book, showmode) {
 
   addBookmarkButton.onclick = function () {
     addBookInMyList(book);
-    // window.location.reload(false)
   }
   removeBookmarkButton.onclick = function () {
     removeBookFromMyList(book);
-    // window.location.reload(true)
   }
 
 }

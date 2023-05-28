@@ -7,11 +7,14 @@ function showResults(data) {
         if (!document.getElementById("results")) {
             const hrSeparator = document.getElementById("separator");
             const resultWrapper = document.createElement("div");
-            const resultBooksWp = document.createElement("div");
-            const titleResultWrapper = document.createElement("h2");
             resultWrapper.setAttribute("id", "results");
+
+            const resultBooksWp = document.createElement("div");
+            resultBooksWp.setAttribute("id", "results-books");
+
+            const titleResultWrapper = document.createElement("h2");            
             titleResultWrapper.setAttribute("id", "titleResultWrapper");
-            resultBooksWp.setAttribute("id", "resultsBooks");
+
             titleResultWrapper.innerHTML = `Résultats de recherche`;
             resultWrapper.appendChild(titleResultWrapper)
             resultWrapper.appendChild(resultBooksWp)

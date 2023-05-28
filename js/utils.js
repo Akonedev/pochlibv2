@@ -3,7 +3,7 @@ import { search } from "./search.js";
 
 const newBook = document.getElementById("newBook");
 
-function addBookSection() {
+function addBookBlock() {
     const bSection = document.createElement("div");
     bSection.setAttribute("class", "sAddBook");
     bSection.innerHTML = `<button id="addBook" class="btn">Ajouter un livre</button>`;
@@ -41,14 +41,13 @@ function addSearchSection() {
 function cancelSearchSection() {
     document.getElementById("cancel").addEventListener("click", function () {
         document.getElementById("sSearch").remove();
-        // addBookSection();
         window.location.reload(true)
     });
 }
 
- function cancelSection(sMode) {
-        document.getElementById("cancel").addEventListener("click", function () {
+function cancelSection(sMode) {
+    document.getElementById("cancel").addEventListener("click", function () {
         document.getElementById(sMode).remove();
-        });
-    }
-export { addBookSection, addSearchSection, cancelSearchSection, cancelSection };
+    });
+}
+export { addBookBlock, addSearchSection, cancelSearchSection, cancelSection };

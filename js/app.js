@@ -1,4 +1,4 @@
-import { addBookSection } from './utils.js';
+import { addBookBlock } from './utils.js';
 import { showMyList } from "./showMylist.js"
 
 function main() {
@@ -16,6 +16,6 @@ function init() {
     }
     );
   }
-  addBookSection();
+  addBookBlock();
 }
 main();
