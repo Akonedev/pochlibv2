@@ -1,6 +1,6 @@
 import { getDescription, getImage, addBookInMyList } from "./book.js";
 import { cancelSection } from "./utils.js"
-import { showMyList } from "./showMylist.js"
+import { showMyList } from "./showResult.js"
 
 function showResults(data) {
     if (data.totalItems > 0) {
@@ -23,6 +23,7 @@ function showResults(data) {
         }
         const search = data.items;
 
+        //Mapping Boucle
         search.map(el => {
             const apimode = "apiList";
             showMyList(el, apimode);

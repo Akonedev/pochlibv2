@@ -1,6 +1,6 @@
 import { getDescription, getImage, addBookInMyList, removeBookFromMyList } from "./book.js";
 
-function showMyList(book, showmode) {
+function showMyResult(book, showmode) {
   let contentSection = "";
 
   const content = document.getElementById("content");
@@ -102,4 +102,4 @@ function showMyList(book, showmode) {
   }
 
 }
-export { showMyList };
+export { showMyResult as showMyList };

@@ -1,5 +1,5 @@
 import { addSearchSection } from "./utils.js";
-import { showMyList } from "./showMylist.js"
+import { showMyList } from "./showResult.js"
 import createModal  from "./createModal.js";
 const container = document.getElementById("myBooks");
 
@@ -25,33 +25,32 @@ function getImage(image) {
 }
 
 function addBookInMyList(book) {
-    let message = "";
     const books = JSON.parse(sessionStorage.getItem("myPochList"));
     const found = books.find(e => e.id == book.id);
     
     if (found) {
-        message = `Le livre <strong> ${book.volumeInfo.title} </strong> existe déjà dans votre pochlist`;
-        window.message = message;
+        let fmessage = `Le livre <strong> ${book.volumeInfo.title} </strong> existe déjà dans votre pochlist`;
+        createModal(container, fmessage);
         // alert(`Le livre <strong> ${book.volumeInfo.title} </strong> existe déjà dans votre pochlist`);
-        // return;
+        return;
     } else {
         books.push(book);
         sessionStorage.setItem("myPochList", JSON.stringify(books));
         const smode = "mylist";
         showMyList(book, smode);
-        message =`Le livre <strong> ${book.volumeInfo.title} </strong> est ajouté dans votre pochlist`;
-        window.message = message;
+        let amessage =`Le livre <strong> ${book.volumeInfo.title} </strong> est ajouté dans votre pochlist`;
+        createModal(container, amessage);
         // alert(`Le livre <strong> ${book.volumeInfo.title} </strong> est ajouté dans votre pochlist`);
     }
-    createModal(container, message);
+    
 }
 
 function removeBookFromMyList(book) {
     const cardToDelete = document.getElementById("poch-" + book.id);
-    let message = "";
+    let rmessage = "";
     cardToDelete.parentElement.removeChild(cardToDelete);    
-    message =`Le livre <strong> ${book.volumeInfo.title} </strong> sera supprimé de votre pochlist`;
-    createModal(container, message);
+    rmessage =`Le livre <strong> ${book.volumeInfo.title} </strong> sera supprimé de votre pochlist`;
+    createModal(container, rmessage);
     // alert(`Le livre <strong> ${book.volumeInfo.title} </strong> sera supprimé de votre pochlist`);
    
     let books = JSON.parse(sessionStorage.getItem("myPochList"));

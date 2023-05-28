@@ -1,5 +1,5 @@
 import { addBookBlock } from './utils.js';
-import { showMyList } from "./showMylist.js"
+import { showMyList } from "./showResult.js"
 
 function main() {
   init();
