@@ -6,12 +6,13 @@ function showMyResult(book, showmode) {
   const content = document.getElementById("content");
   const myBookList = document.createElement("myBookList");
   myBookList.setAttribute("id", "myBookList");
+  // myBookList.setAttribute("class", "my-book");
 
   content.appendChild(myBookList);
 
   const card = document.createElement("div");
   card.id = "poch-" + book.id;
-  card.className = "card book";
+  card.className = "card book my-book";
 
   const cardTop = document.createElement("div");
   cardTop.className = "card-header";

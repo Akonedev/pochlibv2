@@ -18,9 +18,22 @@ body {
         border: $none;
         font-size: $twentyPixels;
     }
+    
+    .title {
+        width: $oneHundredPercent;
+        // border: $solid $onePixel $black;
+        margin: $fivePixels $zero;
+        padding: $tenPixels;
+        background-color: rgb(235, 235, 235);
+        // margin-bottom: $tenPixels;
+    }
 
     #logo {
         width: 100px;
+        background-image: url('../img/logo.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
 
     h2 {
@@ -61,8 +74,7 @@ body {
         background-color: $red;
     }
 
-    .book,
-    .my-book {
+    .book {
         background-color: #e0e0e0;
         border: $solid $onePixel $black;
         margin: $twentyPixels $zero;
