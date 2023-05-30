@@ -3,24 +3,8 @@ import { cancelSection, addResultSection } from "./utils.js"
 import { showMyList } from "./showResult.js"
 
 async function getApiResults(data) {
-   
-    // if (!document.getElementById("results")) {
-    //     const hrSeparator = document.getElementById("separator");
-    //     const resultWrapper = document.createElement("div");
-    //     resultWrapper.setAttribute("id", "results");
+     document.getElementById("titleResultWrapper").hidden = false; 
 
-    //     const resultBooksWp = document.createElement("div");
-    //     resultBooksWp.setAttribute("id", "results-books");
-
-    //     const titleResultWrapper = document.createElement("h2");            
-    //     titleResultWrapper.setAttribute("id", "titleResultWrapper");
-
-    //     titleResultWrapper.innerHTML = `Résultats de recherche`;
-    //     resultWrapper.appendChild(titleResultWrapper)
-    //     resultWrapper.appendChild(resultBooksWp)
-    //     hrSeparator.after(resultWrapper);
-
-    // }
     if (data.totalItems > 0) {
         const search = data.items;
 

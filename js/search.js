@@ -26,7 +26,10 @@ async function search() {
             .then((data) => {
                 getApiResults(data);
             })
+            const divider = document.createElement("hr");
+            document.getElementById("content").firstChild.before(divider);
     });
+
 }
 
 export { search };

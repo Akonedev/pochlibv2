@@ -1,12 +1,12 @@
 import { getDescription, getImage, addBookInMyList, removeBookFromMyList } from "./book.js";
-import { addResultSection } from "./utils.js"
+// import { addResultSection } from "./utils.js"
 
 function showMyResult(book, showmode) {
   let contentSection = "";
 
   const content = document.getElementById("content");
   const myBookList = document.createElement("myBookList");
-  myBookList.setAttribute("id", "myBookList");x
+  myBookList.setAttribute("id", "myBookList");
 
   content.appendChild(myBookList);
 
@@ -94,6 +94,7 @@ function showMyResult(book, showmode) {
   card.appendChild(cardTop);
   card.appendChild(cardTBottom);
   contentSection.appendChild(card);
+
 
   addBookmarkButton.addEventListener("click", function () {
     addBookInMyList(book);

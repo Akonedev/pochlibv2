@@ -11,7 +11,7 @@ function addBookSection() {
     addBook();
 }
 
-function addResultSection(){
+function addResultSection() {
     const hrSeparator = document.getElementById("separator");
     const resultWrapper = document.createElement("div");
     resultWrapper.setAttribute("id", "results");
@@ -19,11 +19,12 @@ function addResultSection(){
     const resultBooksWp = document.createElement("div");
     resultBooksWp.setAttribute("id", "results-books");
 
-    const titleResultWrapper = document.createElement("h2");            
+    const titleResultWrapper = document.createElement("h2");
     titleResultWrapper.setAttribute("id", "titleResultWrapper");
 
     titleResultWrapper.innerHTML = `Résultats de recherche`;
     resultWrapper.appendChild(titleResultWrapper)
+    titleResultWrapper.hidden = true;
     resultWrapper.appendChild(resultBooksWp)
     hrSeparator.after(resultWrapper);
 }
