@@ -3,7 +3,7 @@ import { search } from "./search.js";
 
 const newBook = document.getElementById("newBook");
 
-function addBookBlock() {
+function addBookSection() {
     const bSection = document.createElement("div");
     bSection.setAttribute("class", "sAddBook");
     bSection.innerHTML = `<button id="addBook" class="btn">Ajouter un livre</button>`;
@@ -11,13 +11,24 @@ function addBookBlock() {
     addBook();
 }
 
-function addCancelButton() {
-    return `<button id="cancel" class="btn">Annuler</button>`;
+function addResultSection(){
+    const hrSeparator = document.getElementById("separator");
+    const resultWrapper = document.createElement("div");
+    resultWrapper.setAttribute("id", "results");
+
+    const resultBooksWp = document.createElement("div");
+    resultBooksWp.setAttribute("id", "results-books");
+
+    const titleResultWrapper = document.createElement("h2");            
+    titleResultWrapper.setAttribute("id", "titleResultWrapper");
+
+    titleResultWrapper.innerHTML = `Résultats de recherche`;
+    resultWrapper.appendChild(titleResultWrapper)
+    resultWrapper.appendChild(resultBooksWp)
+    hrSeparator.after(resultWrapper);
 }
 
-
 function addSearchSection() {
-    const cancel = addCancelButton();
     const sSection = document.createElement("div");
     sSection.className = "sSearch";
     sSection.id = "sSearch";
@@ -27,14 +38,14 @@ function addSearchSection() {
         <input type="text" name="title" id="title" class="input" required><br>
         <label>Auteur</label><br>
         <input type="text" name="author" id="author" class="author" required><br>
-        <button class="btn">Rechercher</button>
-        </form> 
-
-        ${cancel}
+        <div><button class="btn" id="searchBtn" type="submit">Rechercher</button></div>
+        <div><button id="cancel" class="btn">Annuler</button></div>        
+        </form>        
        `;
     document.getElementById("addBook").remove();
     newBook.after(sSection);
     cancelSearchSection();
+
     search();
 }
 
@@ -45,9 +56,10 @@ function cancelSearchSection() {
     });
 }
 
+
 function cancelSection(sMode) {
     document.getElementById("cancel").addEventListener("click", function () {
         document.getElementById(sMode).remove();
     });
 }
-export { addBookBlock, addSearchSection, cancelSearchSection, cancelSection };
+export { addBookSection as addBookBlock, addSearchSection, cancelSearchSection, cancelSection, addResultSection };

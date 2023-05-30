@@ -1,12 +1,12 @@
 import { getDescription, getImage, addBookInMyList, removeBookFromMyList } from "./book.js";
+import { addResultSection } from "./utils.js"
 
 function showMyResult(book, showmode) {
   let contentSection = "";
 
   const content = document.getElementById("content");
   const myBookList = document.createElement("myBookList");
-  myBookList.setAttribute("id", "myBookList");
-  // myBookList.setAttribute("class", "my-book");
+  myBookList.setAttribute("id", "myBookList");x
 
   content.appendChild(myBookList);
 

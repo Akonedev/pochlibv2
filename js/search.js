@@ -1,10 +1,17 @@
 import { getApiResults } from "./getApiResults.js";
 
-function search() {
+async function search() {
     const form = document.getElementById("form");
+    // const searchBtn = document.getElementById("searchBtn");
+    
     form.addEventListener("submit", (event) => {
         // stop form submission
         event.preventDefault();
+       
+
+        if (document.getElementById("results-books") || document.getElementById("error")){
+           document.getElementById("results-books").innerHTML= ""; 
+        }
         
         let url = "";
         let title = "";

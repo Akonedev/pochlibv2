@@ -1,26 +1,27 @@
 import { getDescription, getImage, addBookInMyList } from "./book.js";
-import { cancelSection } from "./utils.js"
+import { cancelSection, addResultSection } from "./utils.js"
 import { showMyList } from "./showResult.js"
 
-function getApiResults(data) {
+async function getApiResults(data) {
+   
+    // if (!document.getElementById("results")) {
+    //     const hrSeparator = document.getElementById("separator");
+    //     const resultWrapper = document.createElement("div");
+    //     resultWrapper.setAttribute("id", "results");
+
+    //     const resultBooksWp = document.createElement("div");
+    //     resultBooksWp.setAttribute("id", "results-books");
+
+    //     const titleResultWrapper = document.createElement("h2");            
+    //     titleResultWrapper.setAttribute("id", "titleResultWrapper");
+
+    //     titleResultWrapper.innerHTML = `Résultats de recherche`;
+    //     resultWrapper.appendChild(titleResultWrapper)
+    //     resultWrapper.appendChild(resultBooksWp)
+    //     hrSeparator.after(resultWrapper);
+
+    // }
     if (data.totalItems > 0) {
-        if (!document.getElementById("results")) {
-            const hrSeparator = document.getElementById("separator");
-            const resultWrapper = document.createElement("div");
-            resultWrapper.setAttribute("id", "results");
-
-            const resultBooksWp = document.createElement("div");
-            resultBooksWp.setAttribute("id", "results-books");
-
-            const titleResultWrapper = document.createElement("h2");            
-            titleResultWrapper.setAttribute("id", "titleResultWrapper");
-
-            titleResultWrapper.innerHTML = `Résultats de recherche`;
-            resultWrapper.appendChild(titleResultWrapper)
-            resultWrapper.appendChild(resultBooksWp)
-            hrSeparator.after(resultWrapper);
-
-        }
         const search = data.items;
 
         //Mapping Boucle
@@ -35,7 +36,7 @@ function getApiResults(data) {
         errorSection.id = "error";
         errorSection.className = "error";
         errorSection.innerHTML = `<p class="center">Aucun livre trouvé</p>`
-        document.getElementById("content").before(errorSection);
+        document.getElementById("results-books").appendChild(errorSection);
         cancelSection("error");
     }
 }
