@@ -29,7 +29,7 @@ function addBookInMyList(book) {
     const found = books.find(e => e.id == book.id);
     
     if (found) {
-        let fmessage = `Le livre <strong> ${book.volumeInfo.title} </strong> existe déjà dans votre pochlist`;
+        let fmessage = `Le livre  ${book.volumeInfo.title}  existe déjà dans votre pochlist`;
         // createModal(container, fmessage);
         alert(fmessage);
         return;
@@ -38,7 +38,7 @@ function addBookInMyList(book) {
         sessionStorage.setItem("myPochList", JSON.stringify(books));
         const smode = "mylist";
         showMyList(book, smode);
-        let amessage =`Le livre <strong> ${book.volumeInfo.title} </strong> est ajouté dans votre pochlist`;
+        let amessage =`Le livre  ${book.volumeInfo.title}  est ajouté dans votre pochlist`;
         // createModal(container, amessage);
         alert(amessage);
     }
@@ -49,7 +49,7 @@ function removeBookFromMyList(book) {
     const cardToDelete = document.getElementById("poch-" + book.id);
     let rmessage = "";
     cardToDelete.parentElement.removeChild(cardToDelete);    
-    rmessage =`Le livre <strong> ${book.volumeInfo.title} </strong> sera supprimé de votre pochlist`;
+    rmessage =`Le livre  ${book.volumeInfo.title} sera supprimé de votre pochlist`;
     // createModal(container, rmessage);
     alert(rmessage);
    
