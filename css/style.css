@@ -13,7 +13,7 @@ body {
   #myBooks .title {
     width: 100%;
     margin: 5px 0;
-    padding: 10px;
+    padding: 4vh 0px 4vh 0px;
     background-color: #ebebeb;
     box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.2); }
   #myBooks #logo {
@@ -34,6 +34,8 @@ body {
     border: solid 1px black;
     margin: 5px 0;
     padding: 5px; }
+  #myBooks .sAddBook {
+    text-align: center; }
   #myBooks .btn {
     width: 200px;
     height: 40px;
@@ -136,7 +138,7 @@ body {
   width: 80%;
   /* Could be more or less, depending on screen size */ }
 
-/* The Close Button ako*/
+/* The Close Button */
 .close {
   color: #aaa;
   float: right;
