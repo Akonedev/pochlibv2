@@ -31,7 +31,7 @@ npm start
 
 Open the application :
 ```
-http://localhost:8080/
+http://localhost:5500/
 ```
 
 Enjoy 
