@@ -4,6 +4,12 @@ This is an example of project realization
 
 ## Instructions to install the project
 
+install node.js
+
+Install Sass
+npm install node-sass
+```
+
 Generate css files with SASS :
 ```
 sass --watch css/style.scss css/style.css
