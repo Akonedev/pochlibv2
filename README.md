@@ -2,7 +2,9 @@
 
 This is an example of project realization
 
-## Instructions to install the project
+To run directly without nodejs and  sass:
+repalce
+## Instructions to install the project for dev
 
 install node.js
 
