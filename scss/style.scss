@@ -88,7 +88,7 @@ body {
     .book {
         background-color: #e0e0e0;
         border: $solid $onePixel $black;
-        margin: $twentyPixels $zero;
+        margin: $tenPixels $tenPixels $fiftyPixels;
         padding: $tenPixels;
     }
 
@@ -97,7 +97,7 @@ body {
     }
 
     .card-bottom {
-        @include flex-container(column, space-between);
+        @include flex-container(column);
     }
 
     .card-id {
@@ -127,7 +127,7 @@ body {
 
 }
 
-@media (min-width: 767px) {
+@media (min-width: 745px) {
     #myBooks {
         #searchBlock .btn {
             width: 150px;
@@ -135,7 +135,7 @@ body {
         }
 
         .book {
-            width: 45%;
+            width: 44%;
         }
 
         .card-bottom {
