@@ -47,7 +47,7 @@ npm start
 ### 6. Goto
 
 ```
-http://localhost:5500/
+http://localhost:8080/
 ```
 
 ## Enjoy
