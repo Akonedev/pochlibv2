@@ -8,9 +8,8 @@
 
 ### 1. Clone repo
 
-```git clone https://github.com/Akonedev/pochlibv2.git
-cd pochlibv2
-```
+- git clone <https://github.com/Akonedev/pochlibv2.git>
+- cd pochlibv2
 
 ## Run directly  wihtout  scss
 
