@@ -13,7 +13,7 @@
 
 ## Run directly  wihtout  scss
 
-'''run the index.html file.```
+- run the index.html file.
 
 ### 2. Nodejs
 
@@ -22,27 +22,32 @@
 
 ### 3. Intall Sass
 
-```npm install node-sass
+```
+npm install node-sass
 ```
 
 ### 4. Generate css files with SASS
 
-```sass --watch css/style.scss css/style.css
+```
+sass --watch css/style.scss css/style.css
 ```
 
 ### 4. Install http server
 
-```Install http Server
+```
+Install http Server
 ```
 
 ### 5. To run
 
-```npm start
+```
+npm start
 ```
 
 ### 6. Goto
 
-```http://localhost:5500/
+```
+http://localhost:5500/
 ```
 
 ## Enjoy
