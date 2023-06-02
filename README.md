@@ -1,7 +1,5 @@
 # OpenClassrooms - poch'lib book Management
 
-# JS POCH'LIB
-
 ## github site
 
 <http://akonedev.github.io/pochlibv2/>
@@ -10,19 +8,17 @@
 
 ### 1. Clone repo
 
-```
-git clone https://github.com/Akonedev/pochlibv2.git
+```git clone https://github.com/Akonedev/pochlibv2.git
 cd pochlibv2
 ```
 
 ## Run directly  wihtout  scss
 
-'''run the index.html file.
+'''run the index.html file.```
 
 ### 2. Nodejs
 
 ```Download and Install nodejs
-
 ```
 
 ### 3. Intall Sass
