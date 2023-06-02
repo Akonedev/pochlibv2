@@ -1,7 +1,12 @@
 import { getDescription, getImage, addBookInMyList, removeBookFromMyList } from "./book.js";
-// import { addResultSection } from "./utils.js"
 
-function showMyResult(book, showmode) {
+/**
+ * The show book function :Create html structure to the list of books
+ * from the api search or from the session storage
+ * @param {book} book - The book to display.
+ * @param {showmode} showmode -search from api or search from session storage.
+ */
+function showBooks(book, showmode) {
   let contentSection = "";
 
   const content = document.getElementById("content");
@@ -104,6 +109,5 @@ function showMyResult(book, showmode) {
     removeBookFromMyList(book);
   })
 
-
 }
-export { showMyResult as showMyList };
+export { showBooks as showMyList };

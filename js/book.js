@@ -1,7 +1,18 @@
 import { addSearchSection } from "./utils.js";
-import { showMyList } from "./showResult.js"
-import createModal  from "./createModal.js";
+import { showMyList } from "./showBooks.js"
 const container = document.getElementById("myBooks");
+
+
+/**
+ * Get the book parameters : 
+ *  Title, 
+ *  Author, 
+ *  Image, 
+ *  Description
+ * function add a book to the session storage
+ * Function ti remove a book from the session storage
+ */
+
 
 function addBook() {
     document.getElementById("addBook").addEventListener("click", function () {
@@ -30,7 +41,6 @@ function addBookInMyList(book) {
     
     if (found) {
         let fmessage = `Le livre  ${book.volumeInfo.title}  existe déjà dans votre pochlist`;
-        // createModal(container, fmessage);
         alert(fmessage);
         return;
     } else {
@@ -39,7 +49,6 @@ function addBookInMyList(book) {
         const smode = "mylist";
         showMyList(book, smode);
         let amessage =`Le livre  ${book.volumeInfo.title}  est ajouté dans votre pochlist`;
-        // createModal(container, amessage);
         alert(amessage);
     }
     
@@ -50,7 +59,6 @@ function removeBookFromMyList(book) {
     let rmessage = "";
     cardToDelete.parentElement.removeChild(cardToDelete);    
     rmessage =`Le livre  ${book.volumeInfo.title} sera supprimé de votre pochlist`;
-    // createModal(container, rmessage);
     alert(rmessage);
    
     let books = JSON.parse(sessionStorage.getItem("myPochList"));

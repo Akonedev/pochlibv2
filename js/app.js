@@ -1,6 +1,12 @@
 import { addBookBlock, addResultSection } from './utils.js';
-import { showMyList } from "./showResult.js"
+import { showMyList } from "./showBooks.js"
 
+
+
+/**
+ * Start :Initialisation Get books stored in the session storage if there's any
+ * Call the display function to display books
+ */
 function main() {
   init();
   addResultSection();
@@ -8,7 +14,6 @@ function main() {
 
 function init() {
   const books = JSON.parse(sessionStorage.getItem('myPochList'));
-  var form_being_submitted = false; /* global variable */
 
   if (!books) {
     sessionStorage.setItem('myPochList', JSON.stringify([]));

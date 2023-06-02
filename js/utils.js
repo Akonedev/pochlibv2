@@ -1,5 +1,10 @@
 import { addBook } from "./book.js";
-import { search } from "./search.js";
+import { search } from "./ApiSearch.js";
+
+/**
+ * The utils functions . use to create template strucutre
+ * Add book section, Result section Search Section, Cancel Section
+ */
 
 const newBook = document.getElementById("newBook");
 
