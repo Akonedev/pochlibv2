@@ -2,7 +2,6 @@ import { addBookBlock, addResultSection } from './utils.js';
 import { showBooks } from "./showBooks.js"
 
 
-
 /**
  * Start :Initialisation Get books stored in the session storage if there's any
  * Call the display function to display books

@@ -8,7 +8,7 @@ import { showBooks } from "./showBooks.js"
  * @param {url} = API url
  */
 
-async function search() {
+async function apiSearch() {
     const form = document.getElementById("form");
 
     form.addEventListener("submit", (event) => {
@@ -55,4 +55,4 @@ async function search() {
     });
 
 }
-export { search };
+export { apiSearch };

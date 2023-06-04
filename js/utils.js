@@ -1,5 +1,5 @@
 import { addBook } from "./book.js";
-import { search } from "./ApiSearch.js";
+import { apiSearch } from "./ApiSearch.js";
 
 /**
  * The utils functions . use to create template strucutre
@@ -52,7 +52,7 @@ function addSearchSection() {
     newBook.after(sSection);
     cancelSearchSection();
 
-    search();
+    apiSearch();
 }
 
 function cancelSearchSection() {
