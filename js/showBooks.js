@@ -11,7 +11,7 @@ function showBooks(book, showmode) {
   let BookmarkButton;
 
   const content = document.getElementById("content");
-   contentSection = document.getElementById("myBookList");
+  contentSection = document.getElementById("myBookList");
   const myBookList = document.createElement("myBookList");
   myBookList.setAttribute("id", "myBookList");
 
@@ -80,14 +80,15 @@ function showBooks(book, showmode) {
     bookImg.src = book.volumeInfo.imageLinks.thumbnail;
   }
 
-  console.log (" showmode  " + showmode);
+  console.log(" showmode  " + showmode);
   if (showmode == "apiList") {
-    if (document.getElementById("results-books")){
-        contentSection = document.getElementById("results-books");    }  
+    if (document.getElementById("results-books")) {
+      contentSection = document.getElementById("results-books");
+    }
     BookmarkButton = addBookmarkButton;
   } else {
-    if ( document.getElementById("myBookList")){
-          contentSection = document.getElementById("myBookList");    
+    if (document.getElementById("myBookList")) {
+      contentSection = document.getElementById("myBookList");
     }
     BookmarkButton = removeBookmarkButton;
   }
@@ -104,18 +105,7 @@ function showBooks(book, showmode) {
 
   card.appendChild(cardTop);
   card.appendChild(cardTBottom);
-  // if (contentSection){
-      contentSection.appendChild(card);
-  // }
-  // else{
-  //   const bcontent = document.getElementById("content");
-  //   const myBookList = document.createElement("myBookList");
-  //   myBookList.setAttribute("id", "myBookList");
-  //   bcontent.before(myBookList);  
-  // }
-
-
-
+  contentSection.appendChild(card);
 
   addBookmarkButton.addEventListener("click", function () {
     addBookInMyList(book);

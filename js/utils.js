@@ -8,16 +8,16 @@ import { apiSearch } from "./ApiSearch.js";
 
 const newBook = document.getElementById("newBook");
 function addBookSection() {
-    if (! document.getElementById("sAddBook")){
+    if (!document.getElementById("sAddBook")) {
         // document.getElementById("sAddBook").remove();
-    
-    const bSection = document.createElement("div");
-    bSection.setAttribute("class", "sAddBook");
-    bSection.setAttribute("id", "sAddBook");
-    bSection.innerHTML = `<button id="addBook" class="btn">Ajouter un livre</button>`;
-    newBook.after(bSection);
-    addBook();
-}
+
+        const bSection = document.createElement("div");
+        bSection.setAttribute("class", "sAddBook");
+        bSection.setAttribute("id", "sAddBook");
+        bSection.innerHTML = `<button id="addBook" class="btn">Ajouter un livre</button>`;
+        newBook.after(bSection);
+        addBook();
+    }
 }
 
 function addResultSection() {
@@ -53,28 +53,28 @@ function addSearchSection() {
         </form>        
        `;
     document.getElementById("addBook").remove();
-    newBook.after(sSection);   
+    newBook.after(sSection);
     apiSearch();
     cancelSection();
 }
 
 function cancelSection() {
     document.getElementById("cancel").addEventListener("click", function () {
-        if (document.getElementById("error")){
+        if (document.getElementById("error")) {
             document.getElementById("error").remove();
         }
-        if (document.getElementById("results")){
+        if (document.getElementById("results")) {
             document.getElementById("results").remove();
         }
         // document.getElementById(sMode).remove();
-        if (document.getElementById("sSearch")){
+        if (document.getElementById("sSearch")) {
             document.getElementById("sSearch").remove();
         }
-        if (document.getElementById("BeforeContentHr")){
+        if (document.getElementById("BeforeContentHr")) {
             document.getElementById("BeforeContentHr").remove();
         }
 
-        
+
         addBookSection();
     });
 }
