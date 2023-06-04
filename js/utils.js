@@ -64,16 +64,14 @@ function cancelSection() {
             document.getElementById("error").remove();
         }
         if (document.getElementById("results")) {
-            document.getElementById("results").remove();
+            document.getElementById("results-books").innerHTML = "";
         }
-        // document.getElementById(sMode).remove();
         if (document.getElementById("sSearch")) {
             document.getElementById("sSearch").remove();
         }
         if (document.getElementById("BeforeContentHr")) {
             document.getElementById("BeforeContentHr").remove();
         }
-
 
         addBookSection();
     });

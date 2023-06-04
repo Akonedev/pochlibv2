@@ -107,6 +107,7 @@ function showBooks(book, showmode) {
   card.appendChild(cardTBottom);
   contentSection.appendChild(card);
 
+
   addBookmarkButton.addEventListener("click", function () {
     addBookInMyList(book);
   })
@@ -114,6 +115,6 @@ function showBooks(book, showmode) {
   removeBookmarkButton.addEventListener("click", function (e) {
     removeBookFromMyList(e, book);
   })
-
+  contentSection = "";
 }
 export { showBooks };

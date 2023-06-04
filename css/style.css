@@ -79,78 +79,26 @@ body {
     text-align: center; }
   #myBooks #results-books,
   #myBooks #myBookList {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap; }
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
   #myBooks .error {
     text-decoration-color: #ac0c00; }
 
-@media (min-width: 745px) and (max-width: 1024px) {
-  #myBooks #searchBlock .btn {
-    width: 150px;
-    margin: 10px 0; }
-  #myBooks .book {
-    width: 44%; }
-  #myBooks .card-bottom {
-    flex-direction: row; } }
+/* Mobile (1 colonne) */
+.book {
+  width: 87%; }
 
-@media (min-width: 1024px) {
+/* Tablette */
+@media (min-width: 745px) {
   .book {
-    width: 30%; } }
+    float: left;
+    width: 86.33%; } }
 
-@media (min-width: 1024px) {
+/* Bureau */
+@media (min-width: 992px) {
   .book {
-    width: 25%; } }
-
-/* Modal  */
-/* The Modal (background) */
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */ }
-
-.divParentModal {
-  background-color: black;
-  background: rgba(0, 0, 0, 0.4); }
-
-.modal_alert {
-  background: red; }
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  /* Could be more or less, depending on screen size */ }
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold; }
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer; }
+    float: left;
+    width: 75%; } }
