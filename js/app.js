@@ -1,5 +1,5 @@
 import { addBookBlock, addResultSection } from './utils.js';
-import { showMyList } from "./showBooks.js"
+import { showBooks } from "./showBooks.js"
 
 
 
@@ -20,7 +20,7 @@ function init() {
   }
   else {
     books.map((b) => {
-      showMyList(b);
+      showBooks(b);
     }
     );
   }

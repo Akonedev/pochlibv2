@@ -1,5 +1,5 @@
 import { addSearchSection } from "./utils.js";
-import { showMyList } from "./showBooks.js"
+import { showBooks } from "./showBooks.js"
 const container = document.getElementById("myBooks");
 
 
@@ -47,7 +47,7 @@ function addBookInMyList(book) {
         books.push(book);
         sessionStorage.setItem("myPochList", JSON.stringify(books));
         const smode = "mylist";
-        showMyList(book, smode);
+        showBooks(book, smode);
         let amessage =`Le livre  ${book.volumeInfo.title}  est ajouté dans votre pochlist`;
         alert(amessage);
     }

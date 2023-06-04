@@ -1,5 +1,5 @@
 import { cancelSection, addResultSection } from "./utils.js"
-import { showMyList } from "./showBooks.js"
+import { showBooks } from "./showBooks.js"
 
 /**
  * Search into the API. Get the result and call the display function
@@ -37,7 +37,7 @@ async function search() {
                     //Mapping Boucle
                     search.map(el => {
                         const apimode = "apiList";
-                        showMyList(el, apimode);
+                        showBooks(el, apimode);
                     });
                     cancelSection("results");
                 }

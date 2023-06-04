@@ -110,4 +110,4 @@ function showBooks(book, showmode) {
   })
 
 }
-export { showBooks as showMyList };
+export { showBooks };
