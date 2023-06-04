@@ -7,13 +7,17 @@ import { apiSearch } from "./ApiSearch.js";
  */
 
 const newBook = document.getElementById("newBook");
-
 function addBookSection() {
+    if (! document.getElementById("sAddBook")){
+        // document.getElementById("sAddBook").remove();
+    
     const bSection = document.createElement("div");
     bSection.setAttribute("class", "sAddBook");
+    bSection.setAttribute("id", "sAddBook");
     bSection.innerHTML = `<button id="addBook" class="btn">Ajouter un livre</button>`;
     newBook.after(bSection);
     addBook();
+}
 }
 
 function addResultSection() {
@@ -49,23 +53,29 @@ function addSearchSection() {
         </form>        
        `;
     document.getElementById("addBook").remove();
-    newBook.after(sSection);
-    cancelSearchSection();
-
+    newBook.after(sSection);   
     apiSearch();
+    cancelSection();
 }
 
-function cancelSearchSection() {
+function cancelSection() {
     document.getElementById("cancel").addEventListener("click", function () {
-        document.getElementById("sSearch").remove();
-        window.location.reload(true)
+        if (document.getElementById("error")){
+            document.getElementById("error").remove();
+        }
+        if (document.getElementById("results")){
+            document.getElementById("results").remove();
+        }
+        // document.getElementById(sMode).remove();
+        if (document.getElementById("sSearch")){
+            document.getElementById("sSearch").remove();
+        }
+        if (document.getElementById("BeforeContentHr")){
+            document.getElementById("BeforeContentHr").remove();
+        }
+
+        
+        addBookSection();
     });
 }
-
-
-function cancelSection(sMode) {
-    document.getElementById("cancel").addEventListener("click", function () {
-        document.getElementById(sMode).remove();
-    });
-}
-export { addBookSection as addBookBlock, addSearchSection, cancelSearchSection, cancelSection, addResultSection };
+export { addBookSection, addSearchSection, cancelSection, addResultSection };

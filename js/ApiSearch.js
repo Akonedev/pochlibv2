@@ -10,6 +10,12 @@ import { showBooks } from "./showBooks.js"
 
 async function apiSearch() {
     const form = document.getElementById("form");
+    // const apimode = "apiList";
+
+    // const bcontent = document.getElementById("content");
+    // const myBookList = document.createElement("myBookList");
+    // myBookList.setAttribute("id", "myBookList");
+    // bcontent.before(myBookList);
 
     form.addEventListener("submit", (event) => {
         // stop form submission
@@ -18,6 +24,8 @@ async function apiSearch() {
         if (document.getElementById("results-books") || document.getElementById("error")) {
             document.getElementById("results-books").innerHTML = "";
         }
+
+        
 
         let url = "";
         let title = "";
@@ -30,7 +38,7 @@ async function apiSearch() {
         const res = fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                document.getElementById("titleResultWrapper").hidden = false;
+                // document.getElementById("titleResultWrapper").hidden = false;
                 if (data.totalItems > 0) {
                     const search = data.items;
 
@@ -39,7 +47,7 @@ async function apiSearch() {
                         const apimode = "apiList";
                         showBooks(el, apimode);
                     });
-                    cancelSection("results");
+                    cancelSection();
                 }
                 else {
                     const errorSection = document.createElement("div");
@@ -47,11 +55,10 @@ async function apiSearch() {
                     errorSection.className = "error";
                     errorSection.innerHTML = `<p class="center">Aucun livre trouvé</p>`
                     document.getElementById("results-books").appendChild(errorSection);
-                    cancelSection("error");
+                    cancelSection();
                 }
             })
-        const divider = document.createElement("hr");
-        document.getElementById("content").firstChild.before(divider);
+       
     });
 
 }

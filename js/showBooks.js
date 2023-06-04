@@ -7,9 +7,11 @@ import { getDescription, getImage, addBookInMyList, removeBookFromMyList } from 
  * @param {showmode} showmode -search from api or search from session storage.
  */
 function showBooks(book, showmode) {
-  let contentSection = "";
+  let contentSection;
+  let BookmarkButton;
 
   const content = document.getElementById("content");
+   contentSection = document.getElementById("myBookList");
   const myBookList = document.createElement("myBookList");
   myBookList.setAttribute("id", "myBookList");
 
@@ -60,7 +62,7 @@ function showBooks(book, showmode) {
     bookDescriptionPar.innerText = bookDescriptionPar.innerText.substring(0, 200) + '...';
   }
 
-  let BookmarkButton;
+  // let BookmarkButton;
   const addBookmarkButton = document.createElement("i");
   addBookmarkButton.setAttribute("class", "fa fa-bookmark");
   addBookmarkButton.setAttribute("id", "addToBookmark");
@@ -78,11 +80,15 @@ function showBooks(book, showmode) {
     bookImg.src = book.volumeInfo.imageLinks.thumbnail;
   }
 
+  console.log (" showmode  " + showmode);
   if (showmode == "apiList") {
-    contentSection = document.getElementById("results-books");
+    if (document.getElementById("results-books")){
+        contentSection = document.getElementById("results-books");    }  
     BookmarkButton = addBookmarkButton;
   } else {
-    contentSection = document.getElementById("myBookList");
+    if ( document.getElementById("myBookList")){
+          contentSection = document.getElementById("myBookList");    
+    }
     BookmarkButton = removeBookmarkButton;
   }
 
@@ -98,15 +104,25 @@ function showBooks(book, showmode) {
 
   card.appendChild(cardTop);
   card.appendChild(cardTBottom);
-  contentSection.appendChild(card);
+  // if (contentSection){
+      contentSection.appendChild(card);
+  // }
+  // else{
+  //   const bcontent = document.getElementById("content");
+  //   const myBookList = document.createElement("myBookList");
+  //   myBookList.setAttribute("id", "myBookList");
+  //   bcontent.before(myBookList);  
+  // }
+
+
 
 
   addBookmarkButton.addEventListener("click", function () {
     addBookInMyList(book);
   })
 
-  removeBookmarkButton.addEventListener("click", function () {
-    removeBookFromMyList(book);
+  removeBookmarkButton.addEventListener("click", function (e) {
+    removeBookFromMyList(e, book);
   })
 
 }

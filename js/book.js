@@ -1,7 +1,5 @@
 import { addSearchSection } from "./utils.js";
 import { showBooks } from "./showBooks.js"
-const container = document.getElementById("myBooks");
-
 
 /**
  * Get the book parameters : 
@@ -13,10 +11,14 @@ const container = document.getElementById("myBooks");
  * Function ti remove a book from the session storage
  */
 
-
+const container = document.getElementById("myBooks");
 function addBook() {
     document.getElementById("addBook").addEventListener("click", function () {
         addSearchSection();
+        if (document.getElementById("sAddBook")){
+            document.getElementById("sAddBook").remove();
+        }
+
     })
 }
 
@@ -54,10 +56,14 @@ function addBookInMyList(book) {
     
 }
 
-function removeBookFromMyList(book) {
-    const cardToDelete = document.getElementById("poch-" + book.id);
+function removeBookFromMyList(e, book,) {
+    // const cardToDelete = document.getElementById("poch-" + book.id);
+    // const cardToDelete = this.closest('.my-book');
+    alert
     let rmessage = "";
-    cardToDelete.parentElement.removeChild(cardToDelete);    
+    // cardToDelete.parentElement.removeChild(cardToDelete); 
+    e.target.closest('.my-book').remove();   
+    console.log ("e.target : " + e.target)
     rmessage =`Le livre  ${book.volumeInfo.title} sera supprimé de votre pochlist`;
     alert(rmessage);
    
