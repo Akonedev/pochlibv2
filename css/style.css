@@ -102,3 +102,16 @@ body {
   .book {
     float: left;
     width: 75%; } }
+
+@media (min-width: 992) and (max-width: 1200) {
+  #results-books,
+  #myBookList {
+    width: 100%; } }
+
+@media (min-width: 1200) {
+  #results-books,
+  #myBookList {
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
