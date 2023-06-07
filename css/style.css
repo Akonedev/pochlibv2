@@ -98,12 +98,7 @@ body {
     width: 86.33%; } }
 
 /* Bureau */
-@media (min-width: 992px) {
-  .book {
-    float: left;
-    width: 75%; } }
-
-@media (min-width: 992) and (max-width: 1200) {
+@media (min-width: 992) {
   #results-books,
   #myBookList {
     width: 100%; } }

@@ -28,13 +28,12 @@ function addResultSection() {
     const resultBooksWp = document.createElement("div");
     resultBooksWp.setAttribute("id", "results-books");
 
-    const titleResultWrapper = document.createElement("h2");
-    titleResultWrapper.setAttribute("id", "titleResultWrapper");
+    // const titleResultWrapper = document.createElement("h2");
+    // titleResultWrapper.setAttribute("id", "titleResultWrapper");
 
-    titleResultWrapper.innerHTML = `Résultats de recherche`;
-    resultWrapper.appendChild(titleResultWrapper)
-    titleResultWrapper.hidden = true;
-    resultWrapper.appendChild(resultBooksWp)
+    // titleResultWrapper.innerHTML = `Résultats de recherche`;
+    // resultWrapper.appendChild(titleResultWrapper);
+    resultWrapper.appendChild(resultBooksWp);
     hrSeparator.after(resultWrapper);
 }
 

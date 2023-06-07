@@ -10,12 +10,22 @@ import { showBooks } from "./showBooks.js"
 
 async function apiSearch() {
     const form = document.getElementById("form");
+    const resultsbooks= document.getElementById("results-books") ;
+    const titleResultWrapper = document.createElement("h2");
+    titleResultWrapper.setAttribute("id", "titleResultWrapper");
+    titleResultWrapper.innerHTML = `Résultats de recherche`;
+
+    const sepbasrech = document.createElement("hr");
+    sepbasrech.setAttribute("id", "sepbasrech");
+ 
     form.addEventListener("submit", (event) => {
         // stop form submission
         event.preventDefault();
-
-        if (document.getElementById("results-books") || document.getElementById("error")) {
-            document.getElementById("results-books").innerHTML = "";
+       
+        if (resultsbooks || document.getElementById("error")) {
+            resultsbooks.innerHTML = "";
+            titleResultWrapper.after(sepbasrech);
+            resultsbooks.before(titleResultWrapper);
         }
 
         let url = "";
@@ -38,6 +48,7 @@ async function apiSearch() {
                         showBooks(el, apimode);
                     });
                     cancelSection();
+                    document.getElementById("results-books").after(sepbasrech);
                 }
                 else {
                     const errorSection = document.createElement("div");
