@@ -79,7 +79,6 @@ body {
     text-align: center; }
   #myBooks #results-books,
   #myBooks #myBookList {
-    max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-gap: 1rem;

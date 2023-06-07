@@ -68,9 +68,17 @@ function cancelSection() {
         if (document.getElementById("sSearch")) {
             document.getElementById("sSearch").remove();
         }
-        if (document.getElementById("BeforeContentHr")) {
-            document.getElementById("BeforeContentHr").remove();
+        
+        
+        if (document.getElementById("titleResultWrapper")) {
+            document.getElementById("titleResultWrapper").remove();
         }
+
+        if (document.getElementById("sepbasrech")) {
+            document.getElementById("sepbasrech").remove();
+        }
+
+        
 
         addBookSection();
     });
