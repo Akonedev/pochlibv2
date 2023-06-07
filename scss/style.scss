@@ -113,15 +113,16 @@ body {
         text-align: $center;
     }
 
-    #results-books,
-    #myBookList {
-            // max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-gap: 1rem;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-   
-    }
+    // #results-books,
+    // #myBookList {
+    //         margin: 0 auto;
+    //         display: grid;
+    //         grid-gap: 1rem;
+    //         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    //         justify-content: center;
+        
+    // }
+
 
     .error{
         text-decoration-color: $red;
@@ -136,31 +137,38 @@ body {
 
       
   /* Tablette */
-  @media (min-width: 745px) {
+  @media only screen and (min-width: 745px) {
     .book {
       float: left;
       width: 86.33%;
-    }
-  }
       
-  /* Bureau */
-//   @media (min-width: 992px) {
-//     .book {
-//     //   float: left;
-//     }
-//   }
-  @media (min-width: 992){
-    #results-books,
-    #myBookList{
-        width: 100%;
     }
   }
-  @media (min-width: 1200){
+
+  @media only screen and (min-width: 745px) and (max-width: 992px) {
+    #results-books,
+    #myBookList {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  //laptop
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
     #results-books,
     #myBookList{
-        width: 100%;
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
   }
+
+     @media only screen and (min-width: 1200px){
+        #results-books,
+        #myBookList{
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        }
+      }

@@ -77,12 +77,6 @@ body {
     color: #ac0c00; }
   #myBooks #addBookBlock {
     text-align: center; }
-  #myBooks #results-books,
-  #myBooks #myBookList {
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
   #myBooks .error {
     text-decoration-color: #ac0c00; }
 
@@ -91,21 +85,28 @@ body {
   width: 87%; }
 
 /* Tablette */
-@media (min-width: 745px) {
+@media only screen and (min-width: 745px) {
   .book {
     float: left;
     width: 86.33%; } }
 
-/* Bureau */
-@media (min-width: 992) {
+@media only screen and (min-width: 745px) and (max-width: 992px) {
   #results-books,
   #myBookList {
-    width: 100%; } }
-
-@media (min-width: 1200) {
-  #results-books,
-  #myBookList {
-    width: 100%;
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  #results-books,
+  #myBookList {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
+
+@media only screen and (min-width: 1200px) {
+  #results-books,
+  #myBookList {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); } }
