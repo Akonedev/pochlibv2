@@ -18,8 +18,8 @@ function showBooks(book, showmode) {
   content.appendChild(myBookList);
 
   const card = document.createElement("div");
-  card.id = "poch-" + book.id;
-  card.className = "card book my-book";
+  // card.id = "poch-" + book.id;
+  // card.className = "card book my-book";
 
   const cardTop = document.createElement("div");
   cardTop.className = "card-header";
@@ -84,11 +84,15 @@ function showBooks(book, showmode) {
   if (showmode == "apiList") {
     if (document.getElementById("results-books")) {
       contentSection = document.getElementById("results-books");
+      card.id = "apiResult-" + book.id;
+      card.className = "card book my-book";
     }
     BookmarkButton = addBookmarkButton;
   } else {
     if (document.getElementById("myBookList")) {
       contentSection = document.getElementById("myBookList");
+      card.id = "mybook-" + book.id;
+      card.className = "card book my-book";
     }
     BookmarkButton = removeBookmarkButton;
   }
@@ -113,7 +117,7 @@ function showBooks(book, showmode) {
   })
 
   removeBookmarkButton.addEventListener("click", function (e) {
-    removeBookFromMyList(e, book);
+    removeBookFromMyList(book.id);
   })
   contentSection = "";
 }

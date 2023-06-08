@@ -56,15 +56,16 @@ function addBookInMyList(book) {
 
 }
 
-function removeBookFromMyList(e, book,) {
+function removeBookFromMyList(bookid, bookinfo) {
     let rmessage = "";
-    e.target.closest('.my-book').remove();
-    console.log("e.target : " + e.target)
-    rmessage = `Le livre  ${book.volumeInfo.title} sera supprimé de votre pochlist`;
+    const cardToDelete = document.getElementById('mybook-' + bookid);
+    cardToDelete.parentElement.removeChild(cardToDelete);
+
+    rmessage = `Le livre  ${bookinfo} sera supprimé de votre pochlist`;
     alert(rmessage);
 
     let books = JSON.parse(sessionStorage.getItem("myPochList"));
-    books = books.filter((b) => b.id != book.id);
+    books = books.filter((b) => b.id != bookid);
     sessionStorage.setItem("myPochList", JSON.stringify(books));
 }
 export { addBook, getDescription, getImage, addBookInMyList, removeBookFromMyList };
